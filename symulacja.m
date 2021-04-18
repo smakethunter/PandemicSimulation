@@ -3,7 +3,7 @@
 close all;
 clear all;
 clc;
-colours = ['g','r','r','r','g','c'];
+colours = ['g','r','m','r','g','k'];
 
 rozmiar = 50; % rozmiar planszy: 50x50
 
