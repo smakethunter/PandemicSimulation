@@ -26,6 +26,9 @@ figure; hold on;
     for i=1:1:I
          for j=1:1:J
              plot(j,i,'.','Marker', 's', 'MarkerFaceColor', colours(zycie(i,j).colour+1), 'MarkerSize', 100);
+             nb = fFindNeighbors(zycie,i,j);
+             
+             
          end
     end
 

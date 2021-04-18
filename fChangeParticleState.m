@@ -4,5 +4,6 @@ conj_state = change_conj_state(particle.state_conj,neighbor_states,probability_o
 new_particle = particle;
 new_particle.state = main_state;
 new_particle.state_conj = conj_state;
+new_particle.colour = find(main_state);
 end
 

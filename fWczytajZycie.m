@@ -23,7 +23,7 @@ for i=1:w
         end
         particles(i,j).state = [0 0 0 0 0 0];
         particles(i,j).state(state) = 1;
-        particles(i,j).state_conj = init_conj_state(particles(i,j).state, possible_states);
+        particles(i,j).state_conj = init_conj_state(particles(i,j).state, possible_states)';
         particles(i,j).age = randi([4,90]);
         particles(i,j).chronic_disease = datasample([0,1],1);
         particles(i,j).fitness =  datasample([1,2,3],1);

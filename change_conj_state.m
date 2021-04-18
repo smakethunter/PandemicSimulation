@@ -3,7 +3,9 @@ x,y =size(current_state);
 c_state = find(current_state);
 probability = zeros(x,y);
 for i=1:1:x
-    probability(x) = sum(neighbor_states*probability_of_change(c_state(1),x));
+    probability(x) = sum(neighbor_states.main_state*probability_of_change.conj_main(:,:,c_state(1),x));
+    probability(x) =probability(x) +sum(neighbor_states.conj_state*probability_of_change.conj_conj(:,:,c_state(1),x));
+
 end
 st = find(current_main_state);
 possible = find(possible_states(st(1),:));
