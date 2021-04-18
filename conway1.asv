@@ -3,11 +3,11 @@
 close all;
 clear all;
 clc;
-colours = ['g','r','r','r','g','c'];
+colorurs = ['g','r','r','r','g','c'];
 
 rozmiar = 50; % rozmiar planszy: 50x50
 
-%zycie = zeros(rozmiar,rozmiar);	   % biezaca plansza zycia
+zycie = zeros(rozmiar,rozmiar);	   % biezaca plansza zycia
 liczbaCykli = 100;                  % ile iteracji zrobic
 
 % wczytanie kilku form zycia z pliku:
@@ -15,21 +15,21 @@ liczbaCykli = 100;                  % ile iteracji zrobic
 %zycie = fWczytajZycie(zycie,'formyZycia/blinker.txt',43,12);
 %zycie = fWczytajZycie(zycie,'formyZycia/clock.txt',12,43);
 %zycie = fWczytajZycie(zycie,'formyZycia/gliderGun.txt',12,43);
-%zycie = fWczytajZycie('formyZycia/prostokat.txt');
-zycie = fWczytajZycie('formyZycia/infG.txt')
+zycie = fWczytajZycie(zycie,'formyZycia/prostokat.txt',43,12);
+%zycie = fWczytajZycie(zycie,'formyZycia/infG.txt',30,30);
 %zycie = fWczytajZycie(zycie,'formyZycia/osc.txt',30,30);
-figure; hold on;
+
 [I,J] = size(zycie);
  % i tylko je wyswietlamy:
     % najpierw J - kolumny, potem 50-I - wiersze do gory nogami 
     % (bo y na wykresie rosnie w gore, a numery wierszy macierzy rosna w dol)
     for i=1:1:I
          for j=1:1:J
-             colours(zycie(i,j).colour+1)
-             plot(j,i,'.','Marker', 's', 'MarkerFaceColor', colours(zycie(i,j).colour+1), 'MarkerSize', 100);
-         end
+             plot(J,rozmiar-I,'.','Marker', 's', 'MarkerFaceColor', 'b', 'MarkerSize', 4);
+    end
     end
 
+    text(2,2.5,['cykl ' num2str(n)]);
 % for n=1:liczbaCykli
 % 
 %     %--- KROK 1 ----------------------------------------------------
