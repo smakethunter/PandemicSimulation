@@ -7,8 +7,10 @@ possible_states = [1,0,1,1,1;
                    0,0,0,1,1]
 st = [1,0,0,0,0,0]
 state = init_conj_state(st,possible_states)
-
-
+%% prpozycja struktury prawdopodobieństw:
+probabitlity_of_change = struct;
+probabitlity_of_change.main_state = np.zeros(6,6,6,6);%
+probabitlity_of_change.conj_state = np.zeros(5,5,6,6);%
 %conj states
 %%
 function conj_state = init_conj_state(state, possible_states)
@@ -67,8 +69,8 @@ new_conj_state = select_state_from_probabilities(proba_of_change);
 end
 %%  Zmiana stanu jednostki
 function new_particle = fChangeParticleState(particle,neighbor_states, probability_of_change, possible_states)
-main_state = change_main_state(particle.state,neighbor_states,probability_of_change);
-conj_state = change_conj_state(particle.state_conj,neighbor_states,probability_of_change, main_state, possible_states);
+main_state = change_main_state(particle.state,neighbor_states,probability_of_change.main_state);
+conj_state = change_conj_state(particle.state_conj,neighbor_states,probability_of_change.conj_state, main_state, possible_states);
 new_particle = particle;
 new_particle.state = main_state;
 new_particle.state_conj = conj_state;
