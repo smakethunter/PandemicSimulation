@@ -1,4 +1,4 @@
-%% skrypt realizuje automat komorkowy "Gra w zycie" Conway'a
+
 
 close all;
 clear all;
@@ -25,7 +25,6 @@ figure; hold on;
     % (bo y na wykresie rosnie w gore, a numery wierszy macierzy rosna w dol)
     for i=1:1:I
          for j=1:1:J
-             colours(zycie(i,j).colour+1)
              plot(j,i,'.','Marker', 's', 'MarkerFaceColor', colours(zycie(i,j).colour+1), 'MarkerSize', 100);
          end
     end
