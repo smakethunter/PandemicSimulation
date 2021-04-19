@@ -1,11 +1,10 @@
 
-clear all;
 
 
 
 clc;
 colours = ['g','r','m','r','g','k'];
-colours_conj = ['w','r','m','g','b'];
+
 rozmiar = 50; % rozmiar planszy: 50x50
 
 %zycie = zeros(rozmiar,rozmiar);	   % biezaca plansza zycia
@@ -37,15 +36,15 @@ figure(1); hold on;
      figure(2); hold on;
      
      
-for i=1:1:I
-        for j=1:1:J
+     for i=1:1:I
+         for j=1:1:J
               
 % % % % %             
              
-            plot(j,i,'.','Marker', 's', 'MarkerFaceColor', colours_conj(find(zycie(i,j).state_conj)), 'MarkerSize', 100);
+            plot(j,i,'.','Marker', 's', 'MarkerFaceColor', colours(find(zycie(i,j).state_conj)+1), 'MarkerSize', 100);
 % % % % %             
-        end
-end
+          end
+    end
 % hold off;
 % for n=1:liczbaCykli
 % 
